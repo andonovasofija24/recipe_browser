@@ -1,4 +1,5 @@
-// lib/models/meal_detail.dart
+import 'meal_summary.dart';
+
 class MealDetail {
   final String idMeal;
   final String strMeal;
@@ -21,7 +22,6 @@ class MealDetail {
   });
 
   factory MealDetail.fromJson(Map<String, dynamic> json) {
-    // extract ingredients and measures (1..20)
     final List<Map<String, String>> ingList = [];
     for (var i = 1; i <= 20; i++) {
       final ingKey = 'strIngredient$i';
@@ -42,6 +42,15 @@ class MealDetail {
       strMealThumb: json['strMealThumb'] ?? '',
       strYoutube: json['strYoutube'],
       ingredients: ingList,
+    );
+  }
+
+  /// Convert MealDetail → MealSummary for displaying in cards
+  MealSummary toSummary() {
+    return MealSummary(
+      idMeal: idMeal,
+      strMeal: strMeal,
+      strMealThumb: strMealThumb,
     );
   }
 }

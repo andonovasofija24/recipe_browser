@@ -1,9 +1,9 @@
-// lib/screens/home_screen.dart
 import 'package:flutter/material.dart';
 import '../models/category.dart';
 import '../services/api_service.dart';
 import '../widgets/category_card.dart';
 import 'category_meals_screen.dart';
+import '../screens/favorites_screen.dart';
 import '../models/meal_detail.dart';
 import 'meal_detail_screen.dart';
 
@@ -47,6 +47,16 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Categories'),
         actions: [
+          IconButton(
+            tooltip: 'Favorites',
+            icon: const Icon(Icons.favorite),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const FavoritesScreen()),
+              );
+            },
+          ),
           IconButton(
             tooltip: 'Random recipe',
             onPressed: _openRandomMeal,

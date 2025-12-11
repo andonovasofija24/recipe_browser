@@ -1,0 +1,6 @@
+* text=auto
+*.json text
+*.dart text
+*.gradle text
+*.kts text
+*.swift text

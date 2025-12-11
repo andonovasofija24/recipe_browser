@@ -1,4 +1,3 @@
-// lib/screens/category_meals_screen.dart
 import 'package:flutter/material.dart';
 import '../models/meal_summary.dart';
 import '../services/api_service.dart';
@@ -25,17 +24,11 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   }
 
   Future<void> _search(String query) async {
-    setState(() {
-      _searchQuery = query;
-    });
-    // If search is non-empty, use global search endpoint and then filter by category client-side
+    setState(() => _searchQuery = query);
     if (query.trim().isNotEmpty) {
       final results = await api.searchMeals(query);
-      final filtered = results.where(
-        (m) => true,
-      ); // we can show all matching results; optional: filter by category not supported in search endpoint
       setState(() {
-        _futureMeals = Future.value(filtered.toList());
+        _futureMeals = Future.value(results.toList());
       });
     } else {
       setState(() {

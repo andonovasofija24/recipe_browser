@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "302652676190",
+    "project_id": "recipe-browser-andonovasofija",
+    "storage_bucket": "recipe-browser-andonovasofija.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302652676190:android:d6fe19616348733634fccf",
+        "android_client_info": {
+          "package_name": "com.example.recipes_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Y4iwxCnemHPTvko41IuFlDztV5MpB4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
